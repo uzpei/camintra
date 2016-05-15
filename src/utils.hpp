@@ -18,6 +18,8 @@ using namespace std;
 
 namespace ci {
     vector<cv::Mat> load_sequence(string dir, string format, int n, int zero=0);
+    void qshow(cv::Mat img);
+    string type2str(int type);
 }
 
 #endif /* utils_hpp */
