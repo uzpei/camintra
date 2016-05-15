@@ -2,6 +2,7 @@
 #include <opencv2/videoio/videoio.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/photo.hpp>
 
 #include <iostream>
 #include <stdio.h>
@@ -50,14 +51,19 @@ namespace {
         
         // First denoising pass
         if (state_prefilter) {
-            Mat rgb[3];
-            split(working, rgb);
-            for (int i = 0; i <= 2; i++) {
-                Mat out;
-                cv::bilateralFilter(rgb[i], out, 5, 0.5*255, 2);
-                rgb[i] = out;
-            }
-            merge(rgb, 3, working);
+//            Mat rgb[3];
+//            split(working, rgb);
+//            for (int i = 0; i <= 2; i++) {
+//                Mat out;
+//                cv::bilateralFilter(rgb[i], out, 5, 0.5*255, 2);
+//                rgb[i] = out;
+//            }
+//            merge(rgb, 3, working);
+            const float h = 3;
+            const float hColor = 3;
+            int tsize = 3;
+            int ssize = 15;
+            fastNlMeansDenoisingColored(working, working, h, hColor, tsize, ssize);
         }
         
         if ((state_sharpen || state_denoise_chroma || state_denoise_luma)) {
@@ -92,14 +98,13 @@ namespace {
                 Mat y_basef;
                 y_base.convertTo(y_basef, CV_32FC1, 1.0/255.0);
                 
-                Mat y_g;
-                //                GaussianBlur(y_basef, y_g, Size(7,7), 1.5);
-                yuv_c[0].convertTo(y_g, CV_32FC1, 1.0/255.0);
+                Mat yf;
+                yuv_c[0].convertTo(yf, CV_32FC1, 1.0/255.0);
                 
                 double mag = 1.5;
-                Mat y_details = y_g - y_basef;
+                Mat y_details = yf - y_basef;
                 
-                Mat sharp = y_g + mag * y_details;
+                Mat sharp = yf + mag * y_details;
                 sharp = max(0.0, min(sharp, 1.0));
                 sharp.convertTo(yuv_c[0], CV_8UC1, 255);
             }
