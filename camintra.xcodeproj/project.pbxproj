@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		56CF6ADB1CE7D0E30060681F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56CF6ADA1CE7D0E30060681F /* main.cpp */; };
+		56CF6ADB1CE7D0E30060681F /* camdenoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56CF6ADA1CE7D0E30060681F /* camdenoise.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		56CF6AD71CE7D0E30060681F /* camintra */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = camintra; sourceTree = BUILT_PRODUCTS_DIR; };
-		56CF6ADA1CE7D0E30060681F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		56CF6ADA1CE7D0E30060681F /* camdenoise.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = camdenoise.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +41,7 @@
 		56CF6ACE1CE7D0E30060681F = {
 			isa = PBXGroup;
 			children = (
+				56CF6AE11CE8CAF10060681F /* camcalib */,
 				56CF6AD91CE7D0E30060681F /* camintra */,
 				56CF6AD81CE7D0E30060681F /* Products */,
 			);
@@ -57,9 +58,16 @@
 		56CF6AD91CE7D0E30060681F /* camintra */ = {
 			isa = PBXGroup;
 			children = (
-				56CF6ADA1CE7D0E30060681F /* main.cpp */,
+				56CF6ADA1CE7D0E30060681F /* camdenoise.cpp */,
 			);
 			path = camintra;
+			sourceTree = "<group>";
+		};
+		56CF6AE11CE8CAF10060681F /* camcalib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = camcalib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56CF6ADB1CE7D0E30060681F /* main.cpp in Sources */,
+				56CF6ADB1CE7D0E30060681F /* camdenoise.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
