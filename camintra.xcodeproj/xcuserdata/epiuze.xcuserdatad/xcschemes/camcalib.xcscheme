@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "56CF6AD61CE7D0E30060681F"
-               BuildableName = "camdenoise"
-               BlueprintName = "camdenoise"
+               BlueprintIdentifier = "56B2EBED1CE8D30900F64574"
+               BuildableName = "camcalib"
+               BlueprintName = "camcalib"
                ReferencedContainer = "container:camintra.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "56CF6AD61CE7D0E30060681F"
-            BuildableName = "camdenoise"
-            BlueprintName = "camdenoise"
+            BlueprintIdentifier = "56B2EBED1CE8D30900F64574"
+            BuildableName = "camcalib"
+            BlueprintName = "camcalib"
             ReferencedContainer = "container:camintra.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,18 +55,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "56CF6AD61CE7D0E30060681F"
-            BuildableName = "camdenoise"
-            BlueprintName = "camdenoise"
+            BlueprintIdentifier = "56B2EBED1CE8D30900F64574"
+            BuildableName = "camcalib"
+            BlueprintName = "camcalib"
             ReferencedContainer = "container:camintra.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "0"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "56CF6AD61CE7D0E30060681F"
-            BuildableName = "camdenoise"
-            BlueprintName = "camdenoise"
+            BlueprintIdentifier = "56B2EBED1CE8D30900F64574"
+            BuildableName = "camcalib"
+            BlueprintName = "camcalib"
             ReferencedContainer = "container:camintra.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

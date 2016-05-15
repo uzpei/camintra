@@ -7,27 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		56CF6ADB1CE7D0E30060681F /* camdenoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56CF6ADA1CE7D0E30060681F /* camdenoise.cpp */; };
+		56B2EBF11CE8D30900F64574 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56B2EBF01CE8D30900F64574 /* main.cpp */; };
+		56B2EBFB1CE8D7E800F64574 /* data in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56B2EBF51CE8D37700F64574 /* data */; };
+		56B2EBFC1CE8DA9F00F64574 /* data in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56B2EBF51CE8D37700F64574 /* data */; };
+		56B2EC021CE8DBA600F64574 /* calibration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56B2EC001CE8DBA600F64574 /* calibration.cpp */; settings = {ASSET_TAGS = (); }; };
+		56B2EC061CE907BE00F64574 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56B2EC041CE907BE00F64574 /* utils.cpp */; settings = {ASSET_TAGS = (); }; };
+		56CF6ADB1CE7D0E30060681F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56CF6ADA1CE7D0E30060681F /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		56B2EBEC1CE8D30900F64574 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				56B2EBFC1CE8DA9F00F64574 /* data in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56CF6AD51CE7D0E30060681F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 8;
+			dstPath = data;
+			dstSubfolderSpec = 7;
 			files = (
+				56B2EBFB1CE8D7E800F64574 /* data in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		56CF6AD71CE7D0E30060681F /* camintra */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = camintra; sourceTree = BUILT_PRODUCTS_DIR; };
-		56CF6ADA1CE7D0E30060681F /* camdenoise.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = camdenoise.cpp; sourceTree = "<group>"; };
+		56B2EBEE1CE8D30900F64574 /* camcalib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = camcalib; sourceTree = BUILT_PRODUCTS_DIR; };
+		56B2EBF01CE8D30900F64574 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		56B2EBF51CE8D37700F64574 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
+		56B2EBFD1CE8DB0900F64574 /* CalibIm1.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = CalibIm1.tif; path = data/CalibIm1.tif; sourceTree = "<group>"; };
+		56B2EC001CE8DBA600F64574 /* calibration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = calibration.cpp; path = src/calibration.cpp; sourceTree = "<group>"; };
+		56B2EC011CE8DBA600F64574 /* calibration.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = calibration.hpp; path = src/calibration.hpp; sourceTree = "<group>"; };
+		56B2EC041CE907BE00F64574 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = utils.cpp; path = src/utils.cpp; sourceTree = "<group>"; };
+		56B2EC051CE907BE00F64574 /* utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = utils.hpp; path = src/utils.hpp; sourceTree = "<group>"; };
+		56CF6AD71CE7D0E30060681F /* camdenoise */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = camdenoise; sourceTree = BUILT_PRODUCTS_DIR; };
+		56CF6ADA1CE7D0E30060681F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		56B2EBEB1CE8D30900F64574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56CF6AD41CE7D0E30060681F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,11 +69,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56B2EBEF1CE8D30900F64574 /* camcalib */ = {
+			isa = PBXGroup;
+			children = (
+				56B2EBF01CE8D30900F64574 /* main.cpp */,
+			);
+			path = camcalib;
+			sourceTree = "<group>";
+		};
+		56B2EBFF1CE8DB8600F64574 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				56B2EC001CE8DBA600F64574 /* calibration.cpp */,
+				56B2EC011CE8DBA600F64574 /* calibration.hpp */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		56B2EC031CE907A800F64574 /* commons */ = {
+			isa = PBXGroup;
+			children = (
+				56B2EC041CE907BE00F64574 /* utils.cpp */,
+				56B2EC051CE907BE00F64574 /* utils.hpp */,
+			);
+			name = commons;
+			sourceTree = "<group>";
+		};
 		56CF6ACE1CE7D0E30060681F = {
 			isa = PBXGroup;
 			children = (
-				56CF6AE11CE8CAF10060681F /* camcalib */,
-				56CF6AD91CE7D0E30060681F /* camintra */,
+				56B2EC031CE907A800F64574 /* commons */,
+				56B2EBFF1CE8DB8600F64574 /* core */,
+				56B2EBFD1CE8DB0900F64574 /* CalibIm1.tif */,
+				56B2EBF51CE8D37700F64574 /* data */,
+				56CF6AD91CE7D0E30060681F /* camdenoise */,
+				56B2EBEF1CE8D30900F64574 /* camcalib */,
 				56CF6AD81CE7D0E30060681F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,32 +111,44 @@
 		56CF6AD81CE7D0E30060681F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				56CF6AD71CE7D0E30060681F /* camintra */,
+				56CF6AD71CE7D0E30060681F /* camdenoise */,
+				56B2EBEE1CE8D30900F64574 /* camcalib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		56CF6AD91CE7D0E30060681F /* camintra */ = {
+		56CF6AD91CE7D0E30060681F /* camdenoise */ = {
 			isa = PBXGroup;
 			children = (
-				56CF6ADA1CE7D0E30060681F /* camdenoise.cpp */,
+				56CF6ADA1CE7D0E30060681F /* main.cpp */,
 			);
+			name = camdenoise;
 			path = camintra;
-			sourceTree = "<group>";
-		};
-		56CF6AE11CE8CAF10060681F /* camcalib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = camcalib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		56CF6AD61CE7D0E30060681F /* camintra */ = {
+		56B2EBED1CE8D30900F64574 /* camcalib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 56CF6ADE1CE7D0E30060681F /* Build configuration list for PBXNativeTarget "camintra" */;
+			buildConfigurationList = 56B2EBF21CE8D30900F64574 /* Build configuration list for PBXNativeTarget "camcalib" */;
+			buildPhases = (
+				56B2EBEA1CE8D30900F64574 /* Sources */,
+				56B2EBEB1CE8D30900F64574 /* Frameworks */,
+				56B2EBEC1CE8D30900F64574 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = camcalib;
+			productName = camcalib;
+			productReference = 56B2EBEE1CE8D30900F64574 /* camcalib */;
+			productType = "com.apple.product-type.tool";
+		};
+		56CF6AD61CE7D0E30060681F /* camdenoise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56CF6ADE1CE7D0E30060681F /* Build configuration list for PBXNativeTarget "camdenoise" */;
 			buildPhases = (
 				56CF6AD31CE7D0E30060681F /* Sources */,
 				56CF6AD41CE7D0E30060681F /* Frameworks */,
@@ -85,9 +158,9 @@
 			);
 			dependencies = (
 			);
-			name = camintra;
+			name = camdenoise;
 			productName = camintra;
-			productReference = 56CF6AD71CE7D0E30060681F /* camintra */;
+			productReference = 56CF6AD71CE7D0E30060681F /* camdenoise */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -99,6 +172,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = uzpei;
 				TargetAttributes = {
+					56B2EBED1CE8D30900F64574 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
 					56CF6AD61CE7D0E30060681F = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
@@ -116,23 +192,48 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				56CF6AD61CE7D0E30060681F /* camintra */,
+				56CF6AD61CE7D0E30060681F /* camdenoise */,
+				56B2EBED1CE8D30900F64574 /* camcalib */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		56B2EBEA1CE8D30900F64574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56B2EC061CE907BE00F64574 /* utils.cpp in Sources */,
+				56B2EC021CE8DBA600F64574 /* calibration.cpp in Sources */,
+				56B2EBF11CE8D30900F64574 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		56CF6AD31CE7D0E30060681F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56CF6ADB1CE7D0E30060681F /* camdenoise.cpp in Sources */,
+				56CF6ADB1CE7D0E30060681F /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		56B2EBF31CE8D30900F64574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		56B2EBF41CE8D30900F64574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		56CF6ADC1CE7D0E30060681F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -269,6 +370,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		56B2EBF21CE8D30900F64574 /* Build configuration list for PBXNativeTarget "camcalib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56B2EBF31CE8D30900F64574 /* Debug */,
+				56B2EBF41CE8D30900F64574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		56CF6AD21CE7D0E30060681F /* Build configuration list for PBXProject "camintra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -278,13 +387,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		56CF6ADE1CE7D0E30060681F /* Build configuration list for PBXNativeTarget "camintra" */ = {
+		56CF6ADE1CE7D0E30060681F /* Build configuration list for PBXNativeTarget "camdenoise" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				56CF6ADF1CE7D0E30060681F /* Debug */,
 				56CF6AE01CE7D0E30060681F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
