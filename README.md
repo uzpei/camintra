@@ -1,7 +1,7 @@
 # Camintra
 Get to know your camera!
 
-* Intrinsics pinhole parameters
+* Intrinsic pinhole parameters
 	* Focal length
 	* Aspect ratio
 	* Principal point
