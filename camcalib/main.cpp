@@ -15,7 +15,7 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-// product includes
+// prod includes
 #include "utils.hpp"
 #include "calibration.hpp"
 
