@@ -34,7 +34,8 @@ namespace ci {
         static ptr create();
         static ptr create_from();
         
-        static std::vector<cv::Point2f> detect(cv::Mat& frame);
+        static std::vector<cv::Point2f> detect(cv::Mat& frame, cv::Size board_size);
+        static double calibrate(std::vector<cv::Point2f> pts2d, cv::Size board_size, cv::Size image_size, cv::Mat& camera_matrix);
 
     protected:
         Calibration();

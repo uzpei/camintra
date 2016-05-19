@@ -43,24 +43,50 @@ Calibration::Calibration() {
     
 }
 
-vector<Point2f> Calibration::detect(cv::Mat& frame) {
-    vector<Point2f> pts;
-    int flags = CALIB_CB_ADAPTIVE_THRESH | CALIB_CB_NORMALIZE_IMAGE;
-
-    // TODO: fast check erroneously fails with high distortions like fisheye
-    flags |= CALIB_CB_FAST_CHECK;
-    Size board(7, 9);
+double Calibration::calibrate(std::vector<cv::Point2f> image_points, cv::Size board_size, Size image_size, Mat& camera_matrix) {
+    vector<Mat> rvecs, tvecs;
+    vector<float> reprojErrs;
+    vector<Point3f> corners;
+    float squareSizeX = 1.0f;
+    float squareSizeY = 1.0f;
     
-    bool found = findChessboardCorners(frame, board, pts, flags);
+    for( int i = 0; i < board_size.height; ++i )
+        for( int j = 0; j < board_size.width; ++j )
+            corners.push_back(Point3f(float(j*squareSizeX), float(i*squareSizeY), 0));
+
+    vector<vector<Point3f> > points3d;
+    points3d.resize(1, corners);
+
+    vector<vector<Point2f> > points2d;
+    points2d.resize(1, image_points);
+
+    int flags = /*CALIB_FIX_K3|*/CALIB_FIX_K4|CALIB_FIX_K5|CALIB_FIX_K6; //CALIB_FIX_K3; //CALIB_FIX_ASPECT_RATIO |  | CALIB_ZERO_TANGENT_DIST;
+    TermCriteria criteria = TermCriteria(TermCriteria::COUNT+TermCriteria::EPS, 100, DBL_EPSILON);
+    Mat distCoeffs = Mat::zeros(1, 5, CV_64F);
+    double rms = calibrateCamera(points3d, points2d, image_size, camera_matrix, distCoeffs, rvecs, tvecs, flags, criteria);
+    
+    return rms;
+}
+
+vector<Point2f> Calibration::detect(cv::Mat& frame, Size board_size) {
+    // Detection flags
+    int flags = CALIB_CB_ADAPTIVE_THRESH | CALIB_CB_NORMALIZE_IMAGE;
+    
+    // TODO: fast check can fail with lenses with high distoration
+    flags |= CALIB_CB_FAST_CHECK;
+    vector<Point2f> pts;
+    bool found = findChessboardCorners(frame, board_size, pts, flags);
     
     cout << (found ? "Checkerboard detected!" : "Checkerboard not detected!") << endl;
+    
+    if (!found)
+        return pts;
 
     Mat viewGray;
     cvtColor(frame, viewGray, COLOR_BGR2GRAY);
-    cornerSubPix( viewGray, pts, Size(11,11),
-                 Size(-1,-1), TermCriteria( TermCriteria::EPS+TermCriteria::COUNT, 30, 0.1 ));
+    cornerSubPix( viewGray, pts, Size(11,11), Size(-1,-1), TermCriteria(TermCriteria::EPS+TermCriteria::COUNT, 100, 0.01 ));
 
-    drawChessboardCorners(frame, board, Mat(pts), found);
+    drawChessboardCorners(frame, board_size, Mat(pts), true);
     
     return pts;
 }
