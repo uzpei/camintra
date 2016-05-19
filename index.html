@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Camintra by uzpei</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/uzpei/camintra">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/uzpei/camintra/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/uzpei/camintra/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Camintra</h1>
+          <p>Get to know your camera. Intrinsics and extrinsic parameters, noise level, sharpness, and more.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/uzpei">uzpei</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="camintra" class="anchor" href="#camintra" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Camintra</h1>
+
+<p>Get to know your camera!</p>
+
+<ul>
+<li>Intrinsic pinhole parameters
+
+<ul>
+<li>Focal length</li>
+<li>Aspect ratio</li>
+<li>Principal point</li>
+<li>Field of view</li>
+</ul>
+</li>
+<li>Extrinsic parameters
+
+<ul>
+<li>Camera center</li>
+<li>Attitude matrix</li>
+</ul>
+</li>
+<li>Lense distortion</li>
+<li>Camera response function</li>
+<li>Point spread function</li>
+<li>Noise estimation</li>
+<li>Sharpness estimation</li>
+</ul>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<ul>
+<li>OpenCV 3.1</li>
+<li>Xcode 7</li>
+<li>OS X 10.11.4</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="opencv" class="anchor" href="#opencv" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>OpenCV</h3>
+
+<pre><code>export CFLAGS="-I /usr/local/lib/python2.7/site-packages/numpy/core/include $CFLAGS"
+export CFLAGS="-I /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy/core/include $CFLAGS"
+
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D BUILD_opencv_python2=ON \
+    -D BUILD_opencv_python3=OFF \
+    -D WITH_CUDA=OFF \
+    -D WITH_FFMPEG=OFF \
+    -D PYTHON_LIBRARY=/usr/lib/libpython2.7.dylib \
+    -D PYTHON2_PACKAGES_PATH=/usr/local/lib/python2.7/site-packages \
+    -D PYTHON2_NUMPY_INCLUDE_DIRS=/usr/local/lib/python2.7/site-packages/numpy/core/include \
+    -D PYTHON2_INCLUDE_DIR=/usr/local/Frameworks/Python.framework/Headers \
+    -D INSTALL_C_EXAMPLES=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D BUILD_EXAMPLES=ON \
+    -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules ..
+</code></pre>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
