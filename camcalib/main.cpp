@@ -22,6 +22,7 @@
 // std includes
 #include <iostream>
 #include <string>
+#include <vector>
 
 // cv includes
 #include <opencv2/core/core.hpp>
@@ -37,6 +38,10 @@ using namespace cv;
 using namespace std;
 using namespace ci;
 
+// FIXME: hardcoded
+Size board_size = Size(7, 9);
+Size image_size = Size(1080, 720);
+
 int main(int argc, const char * argv[]) {
     // Load some fake calibration data
     vector<Mat> imgs = ci::load_sequence("data/", "c%01db.jpg", 5, 1);
@@ -47,10 +52,23 @@ int main(int argc, const char * argv[]) {
     for (vector<Mat>::iterator it = imgs.begin(); it != imgs.end(); ++it) {
         Mat current = *it;
         
-        Calibration::detect(current);
+        vector<Point2f> detected = Calibration::detect(current, board_size);
+        
+        for (vector<Point2f>::iterator it = detected.begin(); it != detected.end(); ++it) {
+            cout << *it << endl;
+        }
+        
+        // 3x3 intrinsic matrix
+        Mat camera_matrix = Mat::eye(3, 3, CV_64F);
+//        static double calibrate(std::vector<cv::Point2f> pts2d, cv::Size board_size, cv::Mat& camera_matrix);
+        double error = Calibration::calibrate(detected, board_size, image_size, camera_matrix);
+        
+        cout << "Calibrated with error " << error << endl;
         
         imshow(wname, current);
         waitKey();
+        
+        break;
     }
     
     return 0;
